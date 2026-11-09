@@ -1,0 +1,32 @@
+name: flutter_smooth_marquee
+description: Performance-first marquee and auto-scrolling ticker for Flutter. Auto-detects text overflow to save CPU, hardware gradient edge fading, and pauses on hover.
+version: 1.0.0
+homepage: https://github.com/govindtank/flutter_smooth_marquee
+repository: https://github.com/govindtank/flutter_smooth_marquee
+issue_tracker: https://github.com/govindtank/flutter_smooth_marquee/issues
+
+funding:
+  - https://github.com/sponsors/govindtank
+  - https://buymeacoffee.com/govindtanko
+
+topics:
+  - marquee
+  - ticker
+  - text
+  - animation
+  - ui
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
