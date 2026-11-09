@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="25%" r="85%">
+      <stop offset="0%" stop-color="#141C2E" />
+      <stop offset="50%" stop-color="#0A0F1D" />
+      <stop offset="100%" stop-color="#04070D" />
+    </radialGradient>
+
+    <!-- Card Shadow -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <!-- Edge Fade Linear Gradient -->
+    <linearGradient id="edgeFadeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#1E293B" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="edgeFadeRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.0" />
+      <stop offset="100%" stop-color="#1E293B" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Glowing Pill -->
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Stage Background -->
+  <rect width="1200" height="640" fill="url(#bgGrad)" rx="24" />
+  <rect width="1196" height="636" x="2" y="2" fill="none" stroke="#1E293B" stroke-width="1.5" rx="23" stroke-dasharray="6,4" />
+
+  <!-- Header Section -->
+  <g transform="translate(600, 52)" text-anchor="middle">
+    <text y="0" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="2">HIGH-PERFORMANCE FLUTTER TICKER</text>
+    <text y="32" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800" letter-spacing="-0.5">flutter_smooth_marquee</text>
+    <text y="56" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="400">
+      Zero CPU Waste on Static Content • Hardware Gradient Fade • 60/120Hz ProMotion Sync
+    </text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- CARD 1: Music Player Marquee with Edge Fade                               -->
+  <!-- ========================================================================= -->
+  <g transform="translate(80, 140)" filter="url(#cardShadow)">
+    <rect width="1040" height="96" rx="16" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Music Icon -->
+    <circle cx="52" cy="48" r="24" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5" />
+    <path d="M48 40 v14 a4 4 0 1 0 4 4 v-12 l8 -3 v10 a4 4 0 1 0 4 4 v-17 z" fill="#38BDF8" />
+
+    <!-- Content Row -->
+    <g transform="translate(96, 54)">
+      <text fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="600">
+        Queen — Bohemian Rhapsody (Remastered 2011) • A Night at the Opera (Super Deluxe Edition)
+      </text>
+    </g>
+
+    <!-- Badge -->
+    <g transform="translate(860, 36)">
+      <rect width="124" height="26" rx="13" fill="url(#pillGrad)" />
+      <text x="62" y="17" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">LOSSLESS FLAC</text>
+    </g>
+
+    <!-- Fade Overlay Masks -->
+    <rect x="88" y="1" width="40" height="94" fill="url(#edgeFadeLeft)" />
+    <rect x="820" y="1" width="40" height="94" fill="url(#edgeFadeRight)" />
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- CARD 2: Stock & Crypto Live Ticker                                        -->
+  <!-- ========================================================================= -->
+  <g transform="translate(80, 260)" filter="url(#cardShadow)">
+    <rect width="1040" height="88" rx="16" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+    
+    <g transform="translate(48, 30)">
+      <!-- Stock 1 -->
+      <g transform="translate(0, 0)">
+        <text y="20" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700">AAPL</text>
+        <text x="56" y="20" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15">$228.45</text>
+        <rect x="130" y="2" width="62" height="24" rx="6" fill="#22C55E" fill-opacity="0.18" />
+        <text x="161" y="18" fill="#4ADE80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">+1.8%</text>
+      </g>
+
+      <!-- Stock 2 -->
+      <g transform="translate(250, 0)">
+        <text y="20" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700">NVDA</text>
+        <text x="56" y="20" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15">$142.10</text>
+        <rect x="130" y="2" width="62" height="24" rx="6" fill="#22C55E" fill-opacity="0.18" />
+        <text x="161" y="18" fill="#4ADE80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">+4.2%</text>
+      </g>
+
+      <!-- Stock 3 -->
+      <g transform="translate(500, 0)">
+        <text y="20" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700">GOOGL</text>
+        <text x="68" y="20" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15">$178.90</text>
+        <rect x="142" y="2" width="62" height="24" rx="6" fill="#EF4444" fill-opacity="0.18" />
+        <text x="173" y="18" fill="#F87171" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">-0.5%</text>
+      </g>
+
+      <!-- Stock 4 -->
+      <g transform="translate(750, 0)">
+        <text y="20" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700">MSFT</text>
+        <text x="56" y="20" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15">$424.30</text>
+        <rect x="130" y="2" width="62" height="24" rx="6" fill="#22C55E" fill-opacity="0.18" />
+        <text x="161" y="18" fill="#4ADE80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">+0.9%</text>
+      </g>
+    </g>
+
+    <!-- Edge Fade Overlays -->
+    <rect x="1" y="1" width="48" height="86" rx="15" fill="url(#edgeFadeLeft)" />
+    <rect x="991" y="1" width="48" height="86" rx="15" fill="url(#edgeFadeRight)" />
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- CARD 3: Smart Zero-Waste Detection Comparison                             -->
+  <!-- ========================================================================= -->
+  <g transform="translate(80, 372)" filter="url(#cardShadow)">
+    <g transform="translate(0, 0)">
+      <rect width="500" height="116" rx="16" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+      <text x="24" y="32" fill="#4ADE80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1">TEXT FITS IN CONTAINER (0% CPU)</text>
+      <rect x="24" y="46" width="452" height="48" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1" />
+      <text x="44" y="76" fill="#4ADE80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500">System Status: All Services Operational ✓</text>
+      <rect x="370" y="58" width="94" height="24" rx="6" fill="#22C55E" fill-opacity="0.2" />
+      <text x="417" y="74" fill="#4ADE80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="middle">STATIC (IDLE)</text>
+    </g>
+
+    <g transform="translate(540, 0)">
+      <rect width="500" height="116" rx="16" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+      <text x="24" y="32" fill="#FBBF24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1">TEXT OVERFLOWS (AUTO SCROLL)</text>
+      <rect x="24" y="46" width="452" height="48" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1" />
+      <text x="44" y="76" fill="#FBBF24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500">BREAKING: Global high-throughput low-latency network...</text>
+      <rect x="370" y="58" width="94" height="24" rx="6" fill="#F59E0B" fill-opacity="0.2" />
+      <text x="417" y="74" fill="#FBBF24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="middle">ACTIVE 120Hz</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER PILL ROW: FEATURE HIGHLIGHTS                                       -->
+  <!-- ========================================================================= -->
+  <g transform="translate(180, 532)">
+    <g transform="translate(0, 0)">
+      <circle cx="12" cy="12" r="5" fill="#38BDF8" />
+      <text x="28" y="16" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Zero CPU on Static Text</text>
+    </g>
+    <g transform="translate(230, 0)">
+      <circle cx="12" cy="12" r="5" fill="#38BDF8" />
+      <text x="28" y="16" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Hardware ShaderMask Fade</text>
+    </g>
+    <g transform="translate(470, 0)">
+      <circle cx="12" cy="12" r="5" fill="#38BDF8" />
+      <text x="28" y="16" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Hover &amp; Touch Pause</text>
+    </g>
+    <g transform="translate(680, 0)">
+      <circle cx="12" cy="12" r="5" fill="#38BDF8" />
+      <text x="28" y="16" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Pure Flutter (0 Deps)</text>
+    </g>
+  </g>
+</svg>

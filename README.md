@@ -1,12 +1,31 @@
 # flutter_smooth_marquee
 
-[![Pub Version](https://img.shields.io/pub/v/flutter_smooth_marquee)](https://pub.dev/packages/flutter_smooth_marquee)
-[![Pub Points](https://img.shields.io/pub/points/flutter_smooth_marquee)](https://pub.dev/packages/flutter_smooth_marquee/score)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-orange.svg)](https://buymeacoffee.com/govindtanko)
-[![GitHub Sponsors](https://img.shields.io/badge/GitHub-Sponsor-ff69b4.svg)](https://github.com/sponsors/govindtank)
+<p align="center">
+  <a href="https://pub.dev/packages/flutter_smooth_marquee"><img src="https://img.shields.io/pub/v/flutter_smooth_marquee.svg?style=flat-square&color=00E676" alt="Pub Version"></a>
+  <a href="https://pub.dev/packages/flutter_smooth_marquee/score"><img src="https://img.shields.io/pub/points/flutter_smooth_marquee?style=flat-square&color=00B0FF" alt="Pub Points"></a>
+  <a href="https://govindtank.github.io/flutter_smooth_marquee/"><img src="https://img.shields.io/badge/Live_Demo-Try_in_Browser-00E676?style=flat-square&logo=googlechrome&logoColor=white" alt="Live Demo"></a>
+  <a href="https://github.com/govindtank/flutter_smooth_marquee"><img src="https://img.shields.io/badge/platform-android%20%7C%20ios%20%7C%20web%20%7C%20macos%20%7C%20windows-blue?style=flat-square" alt="Platform"></a>
+  <a href="https://github.com/govindtank/flutter_smooth_marquee/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square" alt="License"></a>
+  <a href="https://buymeacoffee.com/govindtanko"><img src="https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg?style=flat-square&logo=buymeacoffee" alt="Buy Me A Coffee"></a>
+  <a href="https://github.com/sponsors/govindtank"><img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa.svg?style=flat-square&logo=githubsponsors" alt="GitHub Sponsors"></a>
+</p>
 
-A performance-first marquee and auto-scrolling ticker for Flutter. Features smart overflow detection to eliminate CPU and battery waste when text fits inside container bounds, hardware gradient edge fading, and interactive touch/hover controls.
+<p align="center">
+  <strong>Performance-first marquee and auto-scrolling ticker for Flutter.</strong><br>
+  Zero CPU/GPU waste on static text, hardware gradient edge fading, rich arbitrary widget support, and interactive touch &amp; hover controls.
+</p>
+
+---
+
+<p align="center">
+  <a href="https://govindtank.github.io/flutter_smooth_marquee/">
+    <img src="https://raw.githubusercontent.com/govindtank/flutter_smooth_marquee/main/doc/assets/hero_showcase.svg" width="100%" alt="Flutter Smooth Marquee Showcase" />
+  </a>
+</p>
+
+<p align="center">
+  🎮 <strong><a href="https://govindtank.github.io/flutter_smooth_marquee/">Launch Live In-Browser Interactive Demo</a></strong>
+</p>
 
 ---
 
@@ -28,7 +47,7 @@ Add `flutter_smooth_marquee` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_smooth_marquee: ^1.0.0
+  flutter_smooth_marquee: ^1.0.1
 ```
 
 Import the package:
@@ -98,16 +117,30 @@ FlutterSmoothMarquee(
 
 ---
 
-## 🧪 Testing
+## 🔗 Related Packages by Author
 
-Run package tests:
+* **[android_island_bar](https://pub.dev/packages/android_island_bar)** — Universal cross-platform island overlay with hardware cutout snapping.
+* **[flutter_sonner](https://pub.dev/packages/flutter_sonner)** — Opinionated stacked action toast & notification HUD inspired by Sonner.
+* **[ai_stream_bubble](https://pub.dev/packages/ai_stream_bubble)** — High-performance streaming AI message bubble with DeepSeek/Claude reasoning accordions.
+* **[ai_voice_orb](https://pub.dev/packages/ai_voice_orb)** — Fluid neural voice orb for Conversational AI & voice agents.
+* **[tactile_fluid_slider](https://pub.dev/packages/tactile_fluid_slider)** — Physics-driven tactile fluid slider with spring morphing.
 
-```bash
-flutter test
-```
+---
+
+## 💖 Support the Project
+
+If you find this project useful, consider supporting its active maintenance and future development:
+
+<p align="left">
+  <a href="https://buymeacoffee.com/govindtanko"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /></a>
+  <a href="https://github.com/sponsors/govindtank"><img src="https://img.shields.io/badge/GitHub%20Sponsors-EA4AAA?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Sponsors" /></a>
+  <a href="https://www.patreon.com/govindtank"><img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon" /></a>
+</p>
 
 ---
 
 ## 📄 License
 
-Licensed under the [Apache 2.0 License](LICENSE).
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+*Maintained with ❤️ by [Govind Tank](https://github.com/govindtank).*
