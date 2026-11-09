@@ -575,7 +575,7 @@ class _MarqueeStudioScreenState extends State<MarqueeStudioScreen> {
               children: [
                 Switch(
                   value: _pauseOnHover,
-                  activeColor: const Color(0xFF00E676),
+                  activeTrackColor: const Color(0xFF00E676),
                   onChanged: (v) => setState(() => _pauseOnHover = v),
                 ),
                 const Text('Pause on Hover',
@@ -587,7 +587,7 @@ class _MarqueeStudioScreenState extends State<MarqueeStudioScreen> {
               children: [
                 Switch(
                   value: _pauseOnTouch,
-                  activeColor: const Color(0xFF00E676),
+                  activeTrackColor: const Color(0xFF00E676),
                   onChanged: (v) => setState(() => _pauseOnTouch = v),
                 ),
                 const Text('Pause on Touch',
@@ -599,7 +599,7 @@ class _MarqueeStudioScreenState extends State<MarqueeStudioScreen> {
               children: [
                 Switch(
                   value: _autoDetectOverflow,
-                  activeColor: const Color(0xFF00E676),
+                  activeTrackColor: const Color(0xFF00E676),
                   onChanged: (v) => setState(() => _autoDetectOverflow = v),
                 ),
                 const Text('Auto-Detect Overflow',
