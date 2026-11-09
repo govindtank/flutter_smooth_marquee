@@ -47,7 +47,7 @@ Add `flutter_smooth_marquee` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_smooth_marquee: ^1.0.1
+  flutter_smooth_marquee: ^1.0.2
 ```
 
 Import the package:

@@ -1,3 +1,8 @@
+## 1.0.2
+
+- Redesigned README showcase graphic to focus on real running UI components (Apple Music bar, Bloomberg crypto ticker, Breaking News, and live metrics).
+- Upgraded live interactive web studio demo with live text editor, width slider, direction toggles (forward/reverse), axis selector (horizontal/vertical), and authentic presets.
+
 ## 1.0.1
 
 - Added high-resolution interactive showcase vector graphics and live browser demo link.
