@@ -19,12 +19,18 @@
 
 <p align="center">
   <a href="https://govindtank.github.io/flutter_smooth_marquee/">
-    <img src="https://raw.githubusercontent.com/govindtank/flutter_smooth_marquee/main/doc/assets/hero_showcase.svg" width="100%" alt="Flutter Smooth Marquee Showcase" />
+    <img src="https://raw.githubusercontent.com/govindtank/flutter_smooth_marquee/main/doc/assets/screenshot.png" width="100%" alt="Flutter Smooth Marquee Live Studio Screenshot" />
   </a>
 </p>
 
 <p align="center">
-  🎮 <strong><a href="https://govindtank.github.io/flutter_smooth_marquee/">Launch Live In-Browser Interactive Demo</a></strong>
+  🎮 <strong><a href="https://govindtank.github.io/flutter_smooth_marquee/">Launch Live In-Browser Interactive Studio</a></strong>
+</p>
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/govindtank/flutter_smooth_marquee/main/doc/assets/hero_showcase.svg" width="100%" alt="Flutter Smooth Marquee Presets & Components" />
 </p>
 
 ---
@@ -47,7 +53,7 @@ Add `flutter_smooth_marquee` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_smooth_marquee: ^1.0.2
+  flutter_smooth_marquee: ^1.0.3
 ```
 
 Import the package:

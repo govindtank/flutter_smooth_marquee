@@ -103,7 +103,8 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
     super.didUpdateWidget(oldWidget);
     if (oldWidget.velocity != widget.velocity ||
         oldWidget.spacing != widget.spacing ||
-        oldWidget.direction != widget.direction) {
+        oldWidget.direction != widget.direction ||
+        oldWidget.scrollAxis != widget.scrollAxis) {
       _updateControllerDuration();
     }
   }
@@ -204,17 +205,27 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
     super.dispose();
   }
 
-  Widget _wrapWithEdgeFade(Widget child, double containerWidth) {
+  Widget _wrapWithEdgeFade(Widget child, double containerExtent) {
     if (widget.fadeEdgeWidth <= 0 ||
-        containerWidth <= widget.fadeEdgeWidth * 2) {
+        containerExtent.isInfinite ||
+        containerExtent <= widget.fadeEdgeWidth * 2) {
       return child;
     }
 
     final fadeFraction =
-        (widget.fadeEdgeWidth / containerWidth).clamp(0.0, 0.45);
+        (widget.fadeEdgeWidth / containerExtent).clamp(0.0, 0.45);
 
     return ShaderMask(
       shaderCallback: (Rect bounds) {
+        if (bounds.width.isInfinite ||
+            bounds.height.isInfinite ||
+            bounds.width <= 0 ||
+            bounds.height <= 0) {
+          return const LinearGradient(
+            colors: [Colors.black, Colors.black],
+          ).createShader(bounds);
+        }
+
         return LinearGradient(
           begin: widget.scrollAxis == Axis.horizontal
               ? Alignment.centerLeft
@@ -245,9 +256,11 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final currentMax = widget.scrollAxis == Axis.horizontal
+        final rawExtent = widget.scrollAxis == Axis.horizontal
             ? constraints.maxWidth
             : constraints.maxHeight;
+
+        final currentMax = rawExtent.isInfinite ? 600.0 : rawExtent;
 
         if (_containerExtent != currentMax) {
           _containerExtent = currentMax;
@@ -256,31 +269,19 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
           });
         }
 
-        // Invisible measuring layer to obtain intrinsic size of arbitrary widget.
-        final measureWidget = Offstage(
-          offstage: true,
-          child: OverflowBox(
-            minWidth: 0.0,
-            maxWidth: double.infinity,
-            minHeight: 0.0,
-            maxHeight: double.infinity,
-            alignment: Alignment.topLeft,
+        // If not overflowing, render child in natural single-axis scroll wrapper
+        // and measure it via KeyedSubtree. Zero double-render, zero overflow.
+        if (!_shouldScroll()) {
+          final staticChild = SingleChildScrollView(
+            scrollDirection: widget.scrollAxis,
+            physics: const NeverScrollableScrollPhysics(),
             child: KeyedSubtree(
               key: _measureKey,
               child: widget.child,
             ),
-          ),
-        );
-
-        if (!_shouldScroll()) {
-          return Stack(
-            clipBehavior: Clip.hardEdge,
-            alignment: widget.alignment,
-            children: [
-              measureWidget,
-              widget.child,
-            ],
           );
+
+          return _wrapWithEdgeFade(staticChild, currentMax);
         }
 
         final unitDistance = (_childExtent ?? 0.0) + widget.spacing;
@@ -303,7 +304,11 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
 
             return Transform.translate(
               offset: translation,
-              child: _buildRepetitiveSequence(unitDistance),
+              child: SingleChildScrollView(
+                scrollDirection: widget.scrollAxis,
+                physics: const NeverScrollableScrollPhysics(),
+                child: _buildRepetitiveSequence(unitDistance),
+              ),
             );
           },
         );
@@ -329,13 +334,7 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
           );
         }
 
-        return Stack(
-          clipBehavior: Clip.hardEdge,
-          children: [
-            measureWidget,
-            content,
-          ],
-        );
+        return content;
       },
     );
   }
@@ -346,11 +345,14 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
         ? SizedBox(width: widget.spacing)
         : SizedBox(height: widget.spacing);
 
-    // Calculate how many repetitions we need to cover the screen seamlessly
+    final safeExtent =
+        (_containerExtent != null && !_containerExtent!.isInfinite)
+            ? _containerExtent!
+            : 600.0;
+
     final repeatCount =
-        ((_containerExtent ?? 300) / (unitDistance > 0 ? unitDistance : 300))
-                .ceil() +
-            2;
+        ((safeExtent / (unitDistance > 0 ? unitDistance : 300)).ceil() + 2)
+            .clamp(2, 40);
 
     final children = <Widget>[];
     for (int i = 0; i < repeatCount; i++) {
@@ -358,7 +360,7 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
       children.add(space);
     }
 
-    final contentWidget = isHorizontal
+    return isHorizontal
         ? Row(
             mainAxisSize: MainAxisSize.min,
             children: children,
@@ -367,14 +369,5 @@ class _FlutterSmoothMarqueeState extends State<FlutterSmoothMarquee>
             mainAxisSize: MainAxisSize.min,
             children: children,
           );
-
-    return OverflowBox(
-      alignment: Alignment.topLeft,
-      minWidth: 0.0,
-      maxWidth: double.infinity,
-      minHeight: 0.0,
-      maxHeight: double.infinity,
-      child: contentWidget,
-    );
   }
 }

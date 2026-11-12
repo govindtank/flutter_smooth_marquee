@@ -1,3 +1,9 @@
+## 1.0.3
+
+- Fixed layout constraints under unbounded viewports and single-child viewports.
+- Added actual high-resolution live browser screenshot to README.
+- Bundled Material Icons font assets for web demos (`uses-material-design: true`).
+
 ## 1.0.2
 
 - Redesigned README showcase graphic to focus on real running UI components (Apple Music bar, Bloomberg crypto ticker, Breaking News, and live metrics).

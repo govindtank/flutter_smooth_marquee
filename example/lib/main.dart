@@ -969,8 +969,12 @@ class _MarqueeStudioScreenState extends State<MarqueeStudioScreen> {
                         color: Color(0xFF00E676))),
               ),
               const SizedBox(width: 10),
-              const Text('Short Text Fits In Container Width (Static Render):',
-                  style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+              const Expanded(
+                child: Text(
+                  'Short Text Fits In Container Width (Static Render):',
+                  style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 8),
@@ -1005,8 +1009,12 @@ class _MarqueeStudioScreenState extends State<MarqueeStudioScreen> {
                         color: Color(0xFFFBBF24))),
               ),
               const SizedBox(width: 10),
-              const Text('Long Text Overflows Container (Hardware Loop):',
-                  style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+              const Expanded(
+                child: Text(
+                  'Long Text Overflows Container (Hardware Loop):',
+                  style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 8),
